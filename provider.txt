@@ -1,0 +1,13 @@
+provider "aws" {
+    profile = "default"
+    region = "us-east-1"
+	
+	
+	variable "name"
+	type ="list"
+	default = {"monu", "sonu"}
+	
+	
+	resource 
+	count = length (var.name)
+	name= element (var.name,count.index)
